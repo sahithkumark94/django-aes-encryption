@@ -8,8 +8,11 @@ iv =  'tf1EOH1JIEiprTmC'.encode('utf-8')
 
 class Encrypt:
     
-    def __init__(self, json_data):
-        self.data = json.dumps(json_data)
+    def __init__(self, json_data, conversion_type):
+        if conversion_type == 'json':
+            self.data = json.dumps(json_data)
+        else:
+            self.data = json_data
             
     def encrypt(self):
         plaint_text = self.data

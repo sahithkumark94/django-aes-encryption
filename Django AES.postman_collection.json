@@ -1,0 +1,140 @@
+{
+	"info": {
+		"_postman_id": "1fead784-8a42-4857-b46f-e56836b2b656",
+		"name": "Django AES",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8974348"
+	},
+	"item": [
+		{
+			"name": "encrypt json",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"abc\" : \"hi\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/aes/encrypt",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"aes",
+						"encrypt"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "encryption with param",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"abc\" : \"hi\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/aes/encryptUrlParam?param=abcd",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"aes",
+						"encryptUrlParam"
+					],
+					"query": [
+						{
+							"key": "param",
+							"value": "abcd"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "decryption with param",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"abc\" : \"hi\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/aes/decryptUrlParam?param=2fQ0LxD4SATj9TDARGHPwg%3D%3D",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"aes",
+						"decryptUrlParam"
+					],
+					"query": [
+						{
+							"key": "param",
+							"value": "2fQ0LxD4SATj9TDARGHPwg%3D%3D"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "decrypt json",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"request\": \"qH0aQC/PAf1op0J1aHxQeA==\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/aes/decrypt",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"aes",
+						"decrypt"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
